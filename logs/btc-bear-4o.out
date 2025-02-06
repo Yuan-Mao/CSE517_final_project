@@ -1,0 +1,35 @@
+Namespace(dataset='btc', model='gpt-4o', to_print=1, starting_date='2023-06-13', ending_date='2023-06-16', price_window=7, reflection_window=3, seed=6216, use_memory=False, use_tech=1, use_txnstat=1, use_news=1, use_reflection=1, resume_dir='', start_trial_num=0, num_trials=1, num_envs=1, run_name='eth_run', is_resume=False)
+
+*** START STATE ***
+{'cash': 500000.0, 'eth_held': 19.302827495144832, 'open': 25902.9409098622, 'net_worth': 1000000.0, 'roi': 0.0, 'today_roi': 0.0, 'technical': {'macd_signal': 'buy'}, 'txnstat': {'total_value_transferred': 110721471.91978812, 'average_fee': 0.0038503896647505, 'total_transactions': 5704434, 'total_size_used': 185053344075, 'unique_addresses': 1288245, 'coinbase_transactions': 445}, 'date': '2023-06-13T00:00:00.000Z'}
+*** END STATE ***
+
+********* START STEP 0 *********
+
+*** START ONCHAIN ANALYST ***
+You are an ETH cryptocurrency trading analyst. The recent price and auxiliary information is given in chronological order below:
+"""
+Open price: 25902.94, total_value_transferred: 110721471.91978812, average_fee: 0.0038503896647505, total_transactions: 5704434, total_size_used: 185053344075, unique_addresses: 1288245, coinbase_transactions: 445, macd_signal: buy
+
+"""
+Write one concise paragraph to analyze the recent information and estimate the market trend accordingly.
+*** ONCHAIN ANALYST RESPONSE ***
+The recent data for Ethereum indicates a positive market sentiment, as evidenced by the MACD signal suggesting a "buy" action. The open price of 25,902.94, coupled with a substantial total value transferred of approximately 110.72 million, reflects strong trading activity and investor interest. The average transaction fee is relatively low at 0.00385, which may encourage more transactions and participation in the network. With over 5.7 million total transactions and a significant total size used, the network is experiencing high usage, further supported by the presence of 1,288,245 unique addresses, indicating a broad user base. The 445 coinbase transactions suggest healthy mining activity. Overall, these factors combined with the bullish MACD signal suggest a potential upward trend in the market for Ethereum.
+*** END ONCHAIN ANALYST ***
+
+
+*** START NEWS ANALYST ***
+Traceback (most recent call last):
+  File "E:\UW-Masters\WI2025\CSE517\CSE517_final_project\run_agent.py", line 103, in <module>
+    main(args)
+  File "E:\UW-Masters\WI2025\CSE517\CSE517_final_project\run_agent.py", line 83, in main
+    run_trial(trial_log_path, world_log_path, trial_idx, env_configs, args=args)
+  File "E:\UW-Masters\WI2025\CSE517\CSE517_final_project\eth_trial.py", line 132, in run_trial
+    final_env_history, is_success = eth_run(env, '', env_config["memory"] if use_memory else [], starting_state, args=args)
+  File "E:\UW-Masters\WI2025\CSE517\CSE517_final_project\eth_trial.py", line 63, in eth_run
+    debug_print(news_s, news_analysis, 'NEWS ANALYST')
+  File "E:\UW-Masters\WI2025\CSE517\CSE517_final_project\eth_trial.py", line 29, in debug_print
+    print(s)
+  File "C:\Users\imant\.conda\envs\cse517_final_project\lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2212' in position 2655: character maps to <undefined>
