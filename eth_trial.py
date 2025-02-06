@@ -16,7 +16,7 @@ from typing import List, Dict, Any, Tuple
  
 def llm(prompt, model, seed):
     try:
-        text = get_chat(prompt=prompt, model=model, seed=seed)  # stop_strs=['\n']
+        text = "" #get_chat(prompt=prompt, model=model, seed=seed)  # stop_strs=['\n']
         return text
     except Exception as e:
         print(prompt)
