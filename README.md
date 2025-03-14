@@ -28,5 +28,3 @@ python -u run_agent.py --dataset sol --starting_date 2023-10-01 --ending_date 20
 ```
 
 Verify results: `python parse_logs.py`
-
-Run full evaluation: `./run\_agent.sh`
